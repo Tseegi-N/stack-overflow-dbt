@@ -2917,3 +2917,217 @@ alter table "my_db"."main"."sources__dbt_tmp" rename to "sources"
 [0m09:23:34.463652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100b21fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100cd0e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100cd0f50>]}
 [0m09:23:34.463814 [debug] [MainThread]: Flushing usage events
 [0m09:23:34.853345 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:10:56.695468 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10769bb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076d1050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076d1910>]}
+
+
+============================== 16:10:56.697522 | df3a65f1-6c0f-48e8-8b33-bcf73ba34838 ==============================
+[0m16:10:56.697522 [info ] [MainThread]: Running with dbt=1.10.11
+[0m16:10:56.697754 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'log_cache_events': 'False', 'debug': 'False', 'target_path': 'None', 'partial_parse': 'True', 'printer_width': '80', 'static_parser': 'True', 'fail_fast': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'empty': 'None', 'use_experimental_parser': 'False', 'invocation_command': 'dbt docs generate', 'warn_error': 'None', 'use_colors': 'True', 'quiet': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'no_print': 'None'}
+[0m16:10:56.777666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'df3a65f1-6c0f-48e8-8b33-bcf73ba34838', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077142d0>]}
+[0m16:10:56.795621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'df3a65f1-6c0f-48e8-8b33-bcf73ba34838', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042c8190>]}
+[0m16:10:56.796662 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m16:10:56.833291 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m16:10:56.873720 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:10:56.873860 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:10:56.885037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'df3a65f1-6c0f-48e8-8b33-bcf73ba34838', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107bd8d90>]}
+[0m16:10:56.895380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'df3a65f1-6c0f-48e8-8b33-bcf73ba34838', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d30490>]}
+[0m16:10:56.895544 [info ] [MainThread]: Found 2 models, 2 sources, 431 macros
+[0m16:10:56.895664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'df3a65f1-6c0f-48e8-8b33-bcf73ba34838', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107713c90>]}
+[0m16:10:56.896265 [info ] [MainThread]: 
+[0m16:10:56.896391 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:10:56.896488 [info ] [MainThread]: 
+[0m16:10:56.896653 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m16:10:56.898169 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_my_db_main'
+[0m16:10:56.934528 [debug] [ThreadPool]: Using duckdb connection "list_my_db_main"
+[0m16:10:56.934692 [debug] [ThreadPool]: On list_my_db_main: BEGIN
+[0m16:10:56.934784 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:10:58.836601 [debug] [ThreadPool]: SQL status: OK in 1.901 seconds
+[0m16:10:58.837981 [debug] [ThreadPool]: Using duckdb connection "list_my_db_main"
+[0m16:10:58.838597 [debug] [ThreadPool]: On list_my_db_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "default", "target_name": "dev", "connection_name": "list_my_db_main"} */
+select
+      'my_db' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'my_db'
+  
+[0m16:12:48.595184 [debug] [ThreadPool]: SQL status: OK in 109.755 seconds
+[0m16:12:48.597390 [debug] [ThreadPool]: On list_my_db_main: ROLLBACK
+[0m16:12:48.598389 [debug] [ThreadPool]: Failed to rollback 'list_my_db_main'
+[0m16:12:48.598524 [debug] [ThreadPool]: On list_my_db_main: Close
+[0m16:12:48.599242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'df3a65f1-6c0f-48e8-8b33-bcf73ba34838', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107626850>]}
+[0m16:12:48.601233 [debug] [Thread-1 (]: Began running node model.stack_overflow.sources
+[0m16:12:48.601429 [debug] [Thread-2 (]: Began running node model.stack_overflow.specific_source
+[0m16:12:48.601777 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_my_db_main, now model.stack_overflow.sources)
+[0m16:12:48.601976 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.stack_overflow.specific_source'
+[0m16:12:48.602129 [debug] [Thread-1 (]: Began compiling node model.stack_overflow.sources
+[0m16:12:48.602292 [debug] [Thread-2 (]: Began compiling node model.stack_overflow.specific_source
+[0m16:12:48.606332 [debug] [Thread-1 (]: Writing injected SQL for node "model.stack_overflow.sources"
+[0m16:12:48.607641 [debug] [Thread-2 (]: Writing injected SQL for node "model.stack_overflow.specific_source"
+[0m16:12:48.608300 [debug] [Thread-2 (]: Began executing node model.stack_overflow.specific_source
+[0m16:12:48.608489 [debug] [Thread-1 (]: Began executing node model.stack_overflow.sources
+[0m16:12:48.608913 [debug] [Thread-2 (]: Finished running node model.stack_overflow.specific_source
+[0m16:12:48.609173 [debug] [Thread-1 (]: Finished running node model.stack_overflow.sources
+[0m16:12:48.609710 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:12:48.609856 [debug] [MainThread]: Connection 'model.stack_overflow.sources' was properly closed.
+[0m16:12:48.609978 [debug] [MainThread]: Connection 'model.stack_overflow.specific_source' was properly closed.
+[0m16:12:48.610286 [debug] [MainThread]: Command end result
+[0m16:12:48.644497 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/tseegi/stack-overflow-dbt/target/manifest.json
+[0m16:12:48.645681 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/tseegi/stack-overflow-dbt/target/semantic_manifest.json
+[0m16:12:48.648314 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/tseegi/stack-overflow-dbt/target/run_results.json
+[0m16:12:48.649657 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m16:12:48.649775 [info ] [MainThread]: Building catalog
+[0m16:12:48.653050 [debug] [ThreadPool]: Acquiring new duckdb connection 'my_db.information_schema'
+[0m16:12:48.653333 [debug] [ThreadPool]: Acquiring new duckdb connection 'stack_overflow_updated.information_schema'
+[0m16:12:48.655578 [debug] [ThreadPool]: Using duckdb connection "my_db.information_schema"
+[0m16:12:48.656304 [debug] [ThreadPool]: Using duckdb connection "stack_overflow_updated.information_schema"
+[0m16:12:48.656416 [debug] [ThreadPool]: On my_db.information_schema: BEGIN
+[0m16:12:48.656525 [debug] [ThreadPool]: On stack_overflow_updated.information_schema: BEGIN
+[0m16:12:48.656635 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:12:48.656726 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:12:48.657617 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:12:48.657739 [debug] [ThreadPool]: Using duckdb connection "my_db.information_schema"
+[0m16:12:48.657852 [debug] [ThreadPool]: On my_db.information_schema: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "default", "target_name": "dev", "connection_name": "my_db.information_schema"} */
+with relations AS (
+      select
+        t.table_name
+        , t.database_name
+        , t.schema_name
+        , 'BASE TABLE' as table_type
+        , t.comment as table_comment
+      from duckdb_tables() t
+      WHERE t.database_name = 'my_db'
+      UNION ALL
+      SELECT v.view_name as table_name
+      , v.database_name
+      , v.schema_name
+      , 'VIEW' as table_type
+      , v.comment as table_comment
+      from duckdb_views() v
+      WHERE v.database_name = 'my_db'
+    )
+    select
+        'my_db' as table_database,
+        r.schema_name as table_schema,
+        r.table_name,
+        r.table_type,
+        r.table_comment,
+        c.column_name,
+        c.column_index as column_index,
+        c.data_type as column_type,
+        c.comment as column_comment,
+        NULL as table_owner
+    FROM relations r JOIN duckdb_columns() c ON r.schema_name = c.schema_name AND r.table_name = c.table_name
+    WHERE (upper(r.schema_name) = upper('main'))
+    ORDER BY
+        r.schema_name,
+        r.table_name,
+        c.column_index
+[0m16:12:48.658272 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m16:12:48.658392 [debug] [ThreadPool]: Using duckdb connection "stack_overflow_updated.information_schema"
+[0m16:12:48.658535 [debug] [ThreadPool]: On stack_overflow_updated.information_schema: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "default", "target_name": "dev", "connection_name": "stack_overflow_updated.information_schema"} */
+with relations AS (
+      select
+        t.table_name
+        , t.database_name
+        , t.schema_name
+        , 'BASE TABLE' as table_type
+        , t.comment as table_comment
+      from duckdb_tables() t
+      WHERE t.database_name = 'my_db'
+      UNION ALL
+      SELECT v.view_name as table_name
+      , v.database_name
+      , v.schema_name
+      , 'VIEW' as table_type
+      , v.comment as table_comment
+      from duckdb_views() v
+      WHERE v.database_name = 'my_db'
+    )
+    select
+        'my_db' as table_database,
+        r.schema_name as table_schema,
+        r.table_name,
+        r.table_type,
+        r.table_comment,
+        c.column_name,
+        c.column_index as column_index,
+        c.data_type as column_type,
+        c.comment as column_comment,
+        NULL as table_owner
+    FROM relations r JOIN duckdb_columns() c ON r.schema_name = c.schema_name AND r.table_name = c.table_name
+    WHERE (upper(r.schema_name) = upper('raw'))
+    ORDER BY
+        r.schema_name,
+        r.table_name,
+        c.column_index
+[0m16:12:48.663689 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m16:12:48.665139 [debug] [ThreadPool]: On my_db.information_schema: ROLLBACK
+[0m16:12:48.665246 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m16:12:48.665412 [debug] [ThreadPool]: Failed to rollback 'my_db.information_schema'
+[0m16:12:48.665538 [debug] [ThreadPool]: On my_db.information_schema: Close
+[0m16:12:48.666082 [debug] [ThreadPool]: On stack_overflow_updated.information_schema: ROLLBACK
+[0m16:12:48.666294 [debug] [ThreadPool]: Failed to rollback 'stack_overflow_updated.information_schema'
+[0m16:12:48.666411 [debug] [ThreadPool]: On stack_overflow_updated.information_schema: Close
+[0m16:12:48.670537 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/tseegi/stack-overflow-dbt/target/catalog.json
+[0m16:12:48.696740 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/tseegi/stack-overflow-dbt/target/manifest.json
+[0m16:12:48.697382 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/tseegi/stack-overflow-dbt/target/semantic_manifest.json
+[0m16:12:48.697483 [info ] [MainThread]: Catalog written to /Users/tseegi/stack-overflow-dbt/target/catalog.json
+[0m16:12:48.699274 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 112.03463, "process_in_blocks": "0", "process_kernel_time": 0.740458, "process_mem_max_rss": "197001216", "process_out_blocks": "0", "process_user_time": 1.219258}
+[0m16:12:48.699462 [debug] [MainThread]: Command `dbt docs generate` succeeded at 16:12:48.699430 after 112.03 seconds
+[0m16:12:48.699636 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m16:12:48.699780 [debug] [MainThread]: Connection 'my_db.information_schema' was properly closed.
+[0m16:12:48.699870 [debug] [MainThread]: Connection 'stack_overflow_updated.information_schema' was properly closed.
+[0m16:12:48.699984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102658fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102506110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102664350>]}
+[0m16:12:48.700126 [debug] [MainThread]: Flushing usage events
+[0m16:12:49.185013 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:20:18.819491 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c01c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cd3510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105fccf10>]}
+
+
+============================== 16:20:18.821404 | 9dff5288-e92a-4ca2-93da-5da51da346e8 ==============================
+[0m16:20:18.821404 [info ] [MainThread]: Running with dbt=1.10.11
+[0m16:20:18.821689 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'log_format': 'default', 'fail_fast': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'static_parser': 'True', 'no_print': 'None', 'invocation_command': 'dbt docs serve', 'printer_width': '80', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'empty': 'None', 'debug': 'False', 'target_path': 'None', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'use_colors': 'True', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'warn_error': 'None', 'cache_selected_only': 'False'}
+[0m16:20:18.899695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9dff5288-e92a-4ca2-93da-5da51da346e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105fd9810>]}
+[0m16:20:18.917811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9dff5288-e92a-4ca2-93da-5da51da346e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102ccc190>]}
+[0m16:21:21.725994 [error] [MainThread]: Encountered an error:
+
+[0m16:21:21.732720 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/tseegi/stack-overflow-dbt/venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tseegi/stack-overflow-dbt/venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tseegi/stack-overflow-dbt/venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tseegi/stack-overflow-dbt/venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 303, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tseegi/stack-overflow-dbt/venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 350, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tseegi/stack-overflow-dbt/venv/lib/python3.11/site-packages/dbt/cli/main.py", line 307, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/tseegi/stack-overflow-dbt/venv/lib/python3.11/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socketserver.py", line 233, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m16:21:21.736413 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 62.953197, "process_in_blocks": "0", "process_kernel_time": 0.11916, "process_mem_max_rss": "121372672", "process_out_blocks": "0", "process_user_time": 0.533324}
+[0m16:21:21.736888 [debug] [MainThread]: Command `dbt docs serve` failed at 16:21:21.736821 after 62.95 seconds
+[0m16:21:21.737245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105fcc2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f339d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10627d990>]}
+[0m16:21:21.737584 [debug] [MainThread]: Flushing usage events
+[0m16:21:22.115923 [debug] [MainThread]: An error was encountered while trying to flush usage events
