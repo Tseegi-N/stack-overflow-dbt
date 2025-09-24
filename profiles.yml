@@ -1,0 +1,17 @@
+default:
+  outputs:
+    dev:
+      type: duckdb
+      path: "md:my_db?motherduck_token={{env_var('MOTHERDUCK_TOKEN')}}"
+      threads: 4
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_region: my-aws-region
+        s3_access_key_id: "{{ env_var('AWS_ACCESS_KEY_ID') }}"
+        s3_secret_access_key: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"
+      attach:
+        - path: "md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27"
+          alias: stack_overflow_updated
+  target: dev

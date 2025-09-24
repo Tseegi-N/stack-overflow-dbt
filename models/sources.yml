@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: stack_overflow_updated
+    database: stack_overflow_updated
+    schema: raw
+    tables:
+      - name: posts
+        description: "Posts table from Stack Overflow"
+      - name: comments
+        description: "Comments table from Stack Overflow"
