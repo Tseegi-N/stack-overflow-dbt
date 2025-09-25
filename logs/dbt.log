@@ -150,413 +150,6 @@ Runtime Error
 [0m14:50:41.576770 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m14:50:41.576873 [info ] [MainThread]:   config_options: None
 [0m14:50:41.576957 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m14:50:41.577049 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
-[0m14:50:41.577136 [info ] [MainThread]:   external_root: .
-[0m14:50:41.577226 [info ] [MainThread]:   use_credential_provider: None
-[0m14:50:41.577311 [info ] [MainThread]:   attach: None
-[0m14:50:41.577399 [info ] [MainThread]:   filesystems: None
-[0m14:50:41.577487 [info ] [MainThread]:   remote: None
-[0m14:50:41.577575 [info ] [MainThread]:   plugins: [{'module': 'motherduck', 'alias': None, 'config': None}]
-[0m14:50:41.577662 [info ] [MainThread]:   disable_transactions: False
-[0m14:50:41.577875 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m14:50:41.614099 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
-[0m14:50:41.642170 [debug] [MainThread]: Using duckdb connection "debug"
-[0m14:50:41.642333 [debug] [MainThread]: On debug: select 1 as id
-[0m14:50:41.642426 [debug] [MainThread]: Opening a new connection, currently in state init
-[0m14:50:42.922950 [debug] [MainThread]: DuckDB adapter: Error running SQL: select 1 as id
-[0m14:50:42.923454 [debug] [MainThread]: DuckDB adapter: Rolling back transaction.
-[0m14:50:42.923935 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
-
-[0m14:50:42.924238 [info ] [MainThread]: [31m1 check failed:[0m
-[0m14:50:42.924505 [info ] [MainThread]: dbt was unable to connect to the specified database.
-The database returned the following error:
-
-  >Runtime Error
-  Invalid Input Error: Initialization function "motherduck_duckdb_cpp_init" from file "/Users/tseegi/.duckdb/extensions/v1.4.0/osx_arm64/motherduck.duckdb_extension" threw an exception: "
-  Your DuckDB version (v1.4.0) is not yet supported by MotherDuck. Please upgrade your DuckDB to v1.3.2.
-  
-  See https://motherduck.com/docs/getting-started/connect-query-from-duckdb-cli for more information."
-
-Check your database credentials and try again. For more information, visit:
-https://docs.getdbt.com/docs/configure-your-profile
-
-
-[0m14:50:42.927305 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.5243428, "process_in_blocks": "0", "process_kernel_time": 0.186855, "process_mem_max_rss": "159907840", "process_out_blocks": "0", "process_user_time": 0.581864}
-[0m14:50:42.927674 [debug] [MainThread]: Command `dbt debug` failed at 14:50:42.927603 after 1.52 seconds
-[0m14:50:42.927845 [debug] [MainThread]: Connection 'debug' was properly closed.
-[0m14:50:42.928038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac33690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac94810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1abc90>]}
-[0m14:50:42.928390 [debug] [MainThread]: Flushing usage events
-[0m14:50:43.279014 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m14:56:15.506180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109789110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109788590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10978a350>]}
-
-
-============================== 14:56:15.508348 | 8edd1fce-3e77-4b10-8559-7befad6ba80d ==============================
-[0m14:56:15.508348 [info ] [MainThread]: Running with dbt=1.10.11
-[0m14:56:15.508600 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'empty': 'None', 'no_print': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'quiet': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'printer_width': '80', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'invocation_command': 'dbt debug', 'cache_selected_only': 'False', 'fail_fast': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True'}
-[0m14:56:15.515831 [info ] [MainThread]: dbt version: 1.10.11
-[0m14:56:15.515988 [info ] [MainThread]: python version: 3.11.0
-[0m14:56:15.516110 [info ] [MainThread]: python path: /Users/tseegi/stack-overflow-dbt/venv/bin/python3.11
-[0m14:56:15.516211 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit
-[0m14:56:15.610900 [info ] [MainThread]: Using profiles dir at /Users/tseegi/stack-overflow-dbt
-[0m14:56:15.611107 [info ] [MainThread]: Using profiles.yml file at /Users/tseegi/stack-overflow-dbt/profiles.yml
-[0m14:56:15.611215 [info ] [MainThread]: Using dbt_project.yml file at /Users/tseegi/stack-overflow-dbt/dbt_project.yml
-[0m14:56:15.612062 [info ] [MainThread]: adapter type: duckdb
-[0m14:56:15.612171 [info ] [MainThread]: adapter version: 1.9.6
-[0m14:56:15.641554 [info ] [MainThread]: Configuration:
-[0m14:56:15.641716 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
-[0m14:56:15.641819 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
-[0m14:56:15.641911 [info ] [MainThread]: Required dependencies:
-[0m14:56:15.642042 [debug] [MainThread]: Executing "git --help"
-[0m14:56:15.658576 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
-[0m14:56:15.658924 [debug] [MainThread]: STDERR: "b''"
-[0m14:56:15.659040 [info ] [MainThread]:  - git [[32mOK found[0m]
-
-[0m14:56:15.659148 [info ] [MainThread]: Connection:
-[0m14:56:15.659296 [info ] [MainThread]:   database: my_db
-[0m14:56:15.659382 [info ] [MainThread]:   schema: main
-[0m14:56:15.659473 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
-[0m14:56:15.659575 [info ] [MainThread]:   config_options: None
-[0m14:56:15.659654 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m14:56:15.659738 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
-[0m14:56:15.659821 [info ] [MainThread]:   external_root: .
-[0m14:56:15.659901 [info ] [MainThread]:   use_credential_provider: None
-[0m14:56:15.659981 [info ] [MainThread]:   attach: None
-[0m14:56:15.660058 [info ] [MainThread]:   filesystems: None
-[0m14:56:15.660137 [info ] [MainThread]:   remote: None
-[0m14:56:15.660215 [info ] [MainThread]:   plugins: [{'module': 'motherduck', 'alias': None, 'config': None}]
-[0m14:56:15.660303 [info ] [MainThread]:   disable_transactions: False
-[0m14:56:15.660512 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m14:56:15.693540 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
-[0m14:56:15.715395 [debug] [MainThread]: Using duckdb connection "debug"
-[0m14:56:15.715559 [debug] [MainThread]: On debug: select 1 as id
-[0m14:56:15.715668 [debug] [MainThread]: Opening a new connection, currently in state init
-[0m14:56:15.890239 [debug] [MainThread]: DuckDB adapter: Error running SQL: select 1 as id
-[0m14:56:15.890626 [debug] [MainThread]: DuckDB adapter: Rolling back transaction.
-[0m14:56:15.890958 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
-
-[0m14:56:15.891196 [info ] [MainThread]: [31m1 check failed:[0m
-[0m14:56:15.891327 [info ] [MainThread]: dbt was unable to connect to the specified database.
-The database returned the following error:
-
-  >Runtime Error
-  Invalid Input Error: Initialization function "motherduck_duckdb_cpp_init" from file "/Users/tseegi/.duckdb/extensions/v1.4.0/osx_arm64/motherduck.duckdb_extension" threw an exception: "
-  Your DuckDB version (v1.4.0) is not yet supported by MotherDuck. Please upgrade your DuckDB to v1.3.2.
-  
-  See https://motherduck.com/docs/getting-started/connect-query-from-duckdb-cli for more information."
-
-Check your database credentials and try again. For more information, visit:
-https://docs.getdbt.com/docs/configure-your-profile
-
-
-[0m14:56:15.894031 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.41579583, "process_in_blocks": "0", "process_kernel_time": 0.163667, "process_mem_max_rss": "137019392", "process_out_blocks": "0", "process_user_time": 0.548137}
-[0m14:56:15.894359 [debug] [MainThread]: Command `dbt debug` failed at 14:56:15.894302 after 0.42 seconds
-[0m14:56:15.894541 [debug] [MainThread]: Connection 'debug' was properly closed.
-[0m14:56:15.894713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109727410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10986c510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099c2550>]}
-[0m14:56:15.894912 [debug] [MainThread]: Flushing usage events
-[0m14:56:16.230474 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:02:27.417747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056950d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105622690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056cce90>]}
-
-
-============================== 15:02:27.419941 | 2b6d84bf-e02e-4a38-ae2d-ed8cba4930b4 ==============================
-[0m15:02:27.419941 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:02:27.420173 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'partial_parse': 'True', 'use_colors': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'warn_error': 'None', 'fail_fast': 'False', 'invocation_command': 'dbt debug', 'empty': 'None', 'version_check': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'static_parser': 'True', 'no_print': 'None', 'target_path': 'None', 'log_cache_events': 'False', 'printer_width': '80', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'send_anonymous_usage_stats': 'True', 'quiet': 'False'}
-[0m15:02:27.427422 [info ] [MainThread]: dbt version: 1.10.11
-[0m15:02:27.427578 [info ] [MainThread]: python version: 3.11.0
-[0m15:02:27.427698 [info ] [MainThread]: python path: /Users/tseegi/stack-overflow-dbt/venv/bin/python3.11
-[0m15:02:27.427805 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit
-[0m15:02:27.466261 [info ] [MainThread]: Using profiles dir at /Users/tseegi/stack-overflow-dbt
-[0m15:02:27.466481 [info ] [MainThread]: Using profiles.yml file at /Users/tseegi/stack-overflow-dbt/profiles.yml
-[0m15:02:27.466594 [info ] [MainThread]: Using dbt_project.yml file at /Users/tseegi/stack-overflow-dbt/dbt_project.yml
-[0m15:02:27.467547 [info ] [MainThread]: adapter type: duckdb
-[0m15:02:27.467656 [info ] [MainThread]: adapter version: 1.9.6
-[0m15:02:27.496905 [info ] [MainThread]: Configuration:
-[0m15:02:27.497057 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
-[0m15:02:27.497159 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
-[0m15:02:27.497251 [info ] [MainThread]: Required dependencies:
-[0m15:02:27.497389 [debug] [MainThread]: Executing "git --help"
-[0m15:02:27.511873 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
-[0m15:02:27.512266 [debug] [MainThread]: STDERR: "b''"
-[0m15:02:27.512392 [info ] [MainThread]:  - git [[32mOK found[0m]
-
-[0m15:02:27.512507 [info ] [MainThread]: Connection:
-[0m15:02:27.512655 [info ] [MainThread]:   database: my_db
-[0m15:02:27.512745 [info ] [MainThread]:   schema: main
-[0m15:02:27.512836 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
-[0m15:02:27.512954 [info ] [MainThread]:   config_options: None
-[0m15:02:27.513038 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m15:02:27.513131 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
-[0m15:02:27.513218 [info ] [MainThread]:   external_root: .
-[0m15:02:27.513299 [info ] [MainThread]:   use_credential_provider: None
-[0m15:02:27.513382 [info ] [MainThread]:   attach: None
-[0m15:02:27.513462 [info ] [MainThread]:   filesystems: None
-[0m15:02:27.513542 [info ] [MainThread]:   remote: None
-[0m15:02:27.513622 [info ] [MainThread]:   plugins: [{'module': 'motherduck', 'alias': None, 'config': None}]
-[0m15:02:27.513705 [info ] [MainThread]:   disable_transactions: False
-[0m15:02:27.513921 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:02:27.546889 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
-[0m15:02:27.574403 [debug] [MainThread]: Using duckdb connection "debug"
-[0m15:02:27.574589 [debug] [MainThread]: On debug: select 1 as id
-[0m15:02:27.574695 [debug] [MainThread]: Opening a new connection, currently in state init
-[0m15:02:31.164937 [debug] [MainThread]: SQL status: OK in 3.590 seconds
-[0m15:02:31.165896 [debug] [MainThread]: On debug: Close
-[0m15:02:31.166109 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
-
-[0m15:02:31.166254 [info ] [MainThread]: [32mAll checks passed![0m
-[0m15:02:31.169172 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.7906852, "process_in_blocks": "0", "process_kernel_time": 0.461371, "process_mem_max_rss": "330170368", "process_out_blocks": "0", "process_user_time": 1.099197}
-[0m15:02:31.169379 [debug] [MainThread]: Command `dbt debug` succeeded at 15:02:31.169333 after 3.79 seconds
-[0m15:02:31.169513 [debug] [MainThread]: Connection 'debug' was properly closed.
-[0m15:02:31.169660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052d76d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056ccd50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105865850>]}
-[0m15:02:31.169836 [debug] [MainThread]: Flushing usage events
-[0m15:02:32.005189 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:21:26.249747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106226e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062a3ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062a3550>]}
-
-
-============================== 15:21:26.251871 | dd8dd36e-a456-42e6-9ede-4df8ae19e854 ==============================
-[0m15:21:26.251871 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:21:26.252110 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'printer_width': '80', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'indirect_selection': 'eager', 'partial_parse': 'True', 'introspect': 'True', 'empty': 'None', 'static_parser': 'True', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'quiet': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'no_print': 'None', 'warn_error': 'None', 'write_json': 'True', 'version_check': 'True', 'fail_fast': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'debug': 'False'}
-[0m15:21:26.258864 [info ] [MainThread]: dbt version: 1.10.11
-[0m15:21:26.259034 [info ] [MainThread]: python version: 3.11.0
-[0m15:21:26.259157 [info ] [MainThread]: python path: /Users/tseegi/stack-overflow-dbt/venv/bin/python3.11
-[0m15:21:26.259263 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit
-[0m15:21:26.261495 [error] [MainThread]: Encountered an error:
-Parsing Error
-  Env var required but not provided: 'MOTHERDUCK_TOKEN'
-[0m15:21:26.263197 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.048595168, "process_in_blocks": "0", "process_kernel_time": 0.103391, "process_mem_max_rss": "105283584", "process_out_blocks": "0", "process_user_time": 0.435888}
-[0m15:21:26.263363 [debug] [MainThread]: Command `dbt debug` failed at 15:21:26.263332 after 0.05 seconds
-[0m15:21:26.263489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062a0050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062ccc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062cca50>]}
-[0m15:21:26.263617 [debug] [MainThread]: Flushing usage events
-[0m15:21:26.605779 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:21:43.898694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050ea790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10516fb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10516ff90>]}
-
-
-============================== 15:21:43.900768 | 5394b05a-9d65-45e9-a9a4-0cae41d334a7 ==============================
-[0m15:21:43.900768 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:21:43.900993 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'empty': 'None', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'target_path': 'None', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'log_format': 'default', 'debug': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'printer_width': '80', 'version_check': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'static_parser': 'True'}
-[0m15:21:43.907472 [info ] [MainThread]: dbt version: 1.10.11
-[0m15:21:43.907609 [info ] [MainThread]: python version: 3.11.0
-[0m15:21:43.907724 [info ] [MainThread]: python path: /Users/tseegi/stack-overflow-dbt/venv/bin/python3.11
-[0m15:21:43.907821 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit
-[0m15:21:43.958443 [info ] [MainThread]: Using profiles dir at /Users/tseegi/stack-overflow-dbt
-[0m15:21:43.958644 [info ] [MainThread]: Using profiles.yml file at /Users/tseegi/stack-overflow-dbt/profiles.yml
-[0m15:21:43.958750 [info ] [MainThread]: Using dbt_project.yml file at /Users/tseegi/stack-overflow-dbt/dbt_project.yml
-[0m15:21:43.988054 [info ] [MainThread]: Configuration:
-[0m15:21:43.988202 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
-[0m15:21:43.988303 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
-[0m15:21:43.988391 [info ] [MainThread]: Required dependencies:
-[0m15:21:43.988529 [debug] [MainThread]: Executing "git --help"
-[0m15:21:44.002660 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
-[0m15:21:44.003070 [debug] [MainThread]: STDERR: "b''"
-[0m15:21:44.003213 [info ] [MainThread]:  - git [[32mOK found[0m]
-
-[0m15:21:44.003340 [info ] [MainThread]: Connection test skipped since no profile was found
-[0m15:21:44.003446 [info ] [MainThread]: [31m1 check failed:[0m
-[0m15:21:44.003547 [info ] [MainThread]: Profile loading failed for the following reason:
-Runtime Error
-  Credentials in profile "default", target "dev" invalid: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27'}, {'alias': 'stack_overflow_updated'}] is not valid under any of the given schemas
-
-
-[0m15:21:44.005281 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.13550359, "process_in_blocks": "0", "process_kernel_time": 0.109882, "process_mem_max_rss": "116359168", "process_out_blocks": "0", "process_user_time": 0.499966}
-[0m15:21:44.005490 [debug] [MainThread]: Command `dbt debug` failed at 15:21:44.005451 after 0.14 seconds
-[0m15:21:44.005665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051882d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10520fb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1008bdfd0>]}
-[0m15:21:44.005828 [debug] [MainThread]: Flushing usage events
-[0m15:21:44.300486 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:23:40.984953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109796750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10634c610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097abfd0>]}
-
-
-============================== 15:23:40.986838 | 8fc3f3cc-33f2-48e7-8a99-3c02907ddcb1 ==============================
-[0m15:23:40.986838 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:23:40.987056 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'empty': 'None', 'printer_width': '80', 'log_format': 'default', 'quiet': 'False', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'write_json': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'debug': 'False', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'no_print': 'None', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'partial_parse': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'send_anonymous_usage_stats': 'True'}
-[0m15:23:40.994350 [info ] [MainThread]: dbt version: 1.10.11
-[0m15:23:40.994484 [info ] [MainThread]: python version: 3.11.0
-[0m15:23:40.994596 [info ] [MainThread]: python path: /Users/tseegi/stack-overflow-dbt/venv/bin/python3.11
-[0m15:23:40.994692 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit
-[0m15:23:41.050896 [info ] [MainThread]: Using profiles dir at /Users/tseegi/stack-overflow-dbt
-[0m15:23:41.051099 [info ] [MainThread]: Using profiles.yml file at /Users/tseegi/stack-overflow-dbt/profiles.yml
-[0m15:23:41.051210 [info ] [MainThread]: Using dbt_project.yml file at /Users/tseegi/stack-overflow-dbt/dbt_project.yml
-[0m15:23:41.051969 [info ] [MainThread]: adapter type: duckdb
-[0m15:23:41.052111 [info ] [MainThread]: adapter version: 1.9.6
-[0m15:23:41.081338 [info ] [MainThread]: Configuration:
-[0m15:23:41.081485 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
-[0m15:23:41.081600 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
-[0m15:23:41.081690 [info ] [MainThread]: Required dependencies:
-[0m15:23:41.081825 [debug] [MainThread]: Executing "git --help"
-[0m15:23:41.094196 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
-[0m15:23:41.094534 [debug] [MainThread]: STDERR: "b''"
-[0m15:23:41.094637 [info ] [MainThread]:  - git [[32mOK found[0m]
-
-[0m15:23:41.094746 [info ] [MainThread]: Connection:
-[0m15:23:41.094890 [info ] [MainThread]:   database: my_db
-[0m15:23:41.094982 [info ] [MainThread]:   schema: main
-[0m15:23:41.095086 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
-[0m15:23:41.095194 [info ] [MainThread]:   config_options: None
-[0m15:23:41.095297 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m15:23:41.095389 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
-[0m15:23:41.095479 [info ] [MainThread]:   external_root: .
-[0m15:23:41.095570 [info ] [MainThread]:   use_credential_provider: None
-[0m15:23:41.095661 [info ] [MainThread]:   attach: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27', 'type': None, 'alias': 'stack_overflow_updated', 'secret': None, 'read_only': False, 'options': None, 'is_ducklake': None}]
-[0m15:23:41.095756 [info ] [MainThread]:   filesystems: None
-[0m15:23:41.095842 [info ] [MainThread]:   remote: None
-[0m15:23:41.095931 [info ] [MainThread]:   plugins: [{'module': 'motherduck', 'alias': None, 'config': None}]
-[0m15:23:41.096019 [info ] [MainThread]:   disable_transactions: False
-[0m15:23:41.096231 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:23:41.134149 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
-[0m15:23:41.161634 [debug] [MainThread]: Using duckdb connection "debug"
-[0m15:23:41.161812 [debug] [MainThread]: On debug: select 1 as id
-[0m15:23:41.161920 [debug] [MainThread]: Opening a new connection, currently in state init
-[0m15:23:42.342450 [debug] [MainThread]: SQL status: OK in 1.180 seconds
-[0m15:23:42.343081 [debug] [MainThread]: On debug: Close
-[0m15:23:42.343729 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
-
-[0m15:23:42.343893 [info ] [MainThread]: [32mAll checks passed![0m
-[0m15:23:42.346158 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.3889284, "process_in_blocks": "0", "process_kernel_time": 0.3963, "process_mem_max_rss": "168722432", "process_out_blocks": "0", "process_user_time": 1.21361}
-[0m15:23:42.346400 [debug] [MainThread]: Command `dbt debug` succeeded at 15:23:42.346348 after 1.39 seconds
-[0m15:23:42.346542 [debug] [MainThread]: Connection 'debug' was properly closed.
-[0m15:23:42.346744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097aae10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109202890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109cfc4d0>]}
-[0m15:23:42.346971 [debug] [MainThread]: Flushing usage events
-[0m15:23:42.665448 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:23:48.187736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106726a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106732990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067c94d0>]}
-
-
-============================== 15:23:48.189324 | 5fc65068-d0f8-4f0e-9488-feee2304e72b ==============================
-[0m15:23:48.189324 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:23:48.189564 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'indirect_selection': 'eager', 'version_check': 'True', 'log_format': 'default', 'warn_error': 'None', 'write_json': 'True', 'log_cache_events': 'False', 'static_parser': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'invocation_command': 'dbt build', 'empty': 'False', 'fail_fast': 'False', 'printer_width': '80', 'debug': 'False', 'partial_parse': 'True', 'quiet': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs'}
-[0m15:23:48.266393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5fc65068-d0f8-4f0e-9488-feee2304e72b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10676a250>]}
-[0m15:23:48.284435 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5fc65068-d0f8-4f0e-9488-feee2304e72b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1025ae810>]}
-[0m15:23:48.285161 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:23:48.318467 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
-[0m15:23:48.318886 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
-[0m15:23:48.319039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5fc65068-d0f8-4f0e-9488-feee2304e72b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d6ebd0>]}
-[0m15:23:48.637819 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5fc65068-d0f8-4f0e-9488-feee2304e72b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1068124d0>]}
-[0m15:23:48.656284 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/tseegi/stack-overflow-dbt/target/manifest.json
-[0m15:23:48.657118 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/tseegi/stack-overflow-dbt/target/semantic_manifest.json
-[0m15:23:48.667452 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5fc65068-d0f8-4f0e-9488-feee2304e72b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070c87d0>]}
-[0m15:23:48.667628 [info ] [MainThread]: Found 1 model, 431 macros
-[0m15:23:48.668218 [info ] [MainThread]: 
-[0m15:23:48.668338 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
-[0m15:23:48.668433 [info ] [MainThread]: 
-[0m15:23:48.668596 [debug] [MainThread]: Acquiring new duckdb connection 'master'
-[0m15:23:48.668901 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_stack_overflow_updated'
-[0m15:23:48.699972 [debug] [ThreadPool]: Using duckdb connection "list_stack_overflow_updated"
-[0m15:23:48.700103 [debug] [ThreadPool]: On list_stack_overflow_updated: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "default", "target_name": "dev", "connection_name": "list_stack_overflow_updated"} */
-
-    
-    select schema_name
-    from system.information_schema.schemata
-    
-    where lower(catalog_name) = '"stack_overflow_updated"'
-    
-  
-  
-[0m15:23:48.700198 [debug] [ThreadPool]: Opening a new connection, currently in state init
-[0m15:23:49.744125 [debug] [ThreadPool]: SQL status: OK in 1.044 seconds
-[0m15:23:49.745543 [debug] [ThreadPool]: On list_stack_overflow_updated: Close
-[0m15:23:49.745957 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_stack_overflow_updated, now create_stack_overflow_updated_main)
-[0m15:23:49.746203 [debug] [ThreadPool]: Creating schema "database: "stack_overflow_updated"
-schema: "main"
-"
-[0m15:23:49.749612 [debug] [ThreadPool]: Using duckdb connection "create_stack_overflow_updated_main"
-[0m15:23:49.749821 [debug] [ThreadPool]: On create_stack_overflow_updated_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "default", "target_name": "dev", "connection_name": "create_stack_overflow_updated_main"} */
-
-    
-        select type from duckdb_databases()
-        where lower(database_name)='stack_overflow_updated'
-        and type='sqlite'
-    
-  
-[0m15:23:49.749977 [debug] [ThreadPool]: Opening a new connection, currently in state closed
-[0m15:23:49.751292 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
-[0m15:23:49.751857 [debug] [ThreadPool]: Using duckdb connection "create_stack_overflow_updated_main"
-[0m15:23:49.751981 [debug] [ThreadPool]: On create_stack_overflow_updated_main: BEGIN
-[0m15:23:49.752226 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
-[0m15:23:49.752334 [debug] [ThreadPool]: Using duckdb connection "create_stack_overflow_updated_main"
-[0m15:23:49.752442 [debug] [ThreadPool]: On create_stack_overflow_updated_main: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "default", "target_name": "dev", "connection_name": "create_stack_overflow_updated_main"} */
-
-    
-    
-        create schema if not exists "stack_overflow_updated"."main"
-    
-[0m15:23:49.755695 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "default", "target_name": "dev", "connection_name": "create_stack_overflow_updated_main"} */
-
-    
-    
-        create schema if not exists "stack_overflow_updated"."main"
-    
-[0m15:23:49.755831 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
-[0m15:23:49.756006 [debug] [ThreadPool]: On create_stack_overflow_updated_main: ROLLBACK
-[0m15:23:49.760723 [debug] [ThreadPool]: Failed to rollback 'create_stack_overflow_updated_main'
-[0m15:23:49.760865 [debug] [ThreadPool]: On create_stack_overflow_updated_main: Close
-[0m15:23:49.761284 [debug] [MainThread]: Connection 'master' was properly closed.
-[0m15:23:49.761456 [debug] [MainThread]: Connection 'create_stack_overflow_updated_main' was properly closed.
-[0m15:23:49.761596 [info ] [MainThread]: 
-[0m15:23:49.761741 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.09 seconds (1.09s).
-[0m15:23:49.761961 [error] [MainThread]: Encountered an error:
-Runtime Error
-  Invalid Input Error: Cannot execute statement of type "CREATE" on database "stack_overflow_updated" which is attached in read-only mode!
-[0m15:23:49.763430 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 1.6014873, "process_in_blocks": "0", "process_kernel_time": 0.270988, "process_mem_max_rss": "185008128", "process_out_blocks": "0", "process_user_time": 1.256778}
-[0m15:23:49.763632 [debug] [MainThread]: Command `dbt build` failed at 15:23:49.763588 after 1.60 seconds
-[0m15:23:49.763794 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067c9290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10752f390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100559fd0>]}
-[0m15:23:49.763962 [debug] [MainThread]: Flushing usage events
-[0m15:23:50.066180 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:35:58.310707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a99950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a9a050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106aa9d50>]}
-
-
-============================== 15:35:58.312962 | 82ff8a9c-ee83-4b6f-bf51-77b5f43a59a0 ==============================
-[0m15:35:58.312962 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:35:58.313188 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'warn_error': 'None', 'quiet': 'False', 'log_cache_events': 'False', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'introspect': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'printer_width': '80', 'static_parser': 'True', 'partial_parse': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt build', 'no_print': 'None', 'debug': 'False', 'write_json': 'True', 'cache_selected_only': 'False', 'empty': 'False', 'log_format': 'default'}
-[0m15:35:58.408791 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '82ff8a9c-ee83-4b6f-bf51-77b5f43a59a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b0add0>]}
-[0m15:35:58.426548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '82ff8a9c-ee83-4b6f-bf51-77b5f43a59a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102d56ed0>]}
-[0m15:35:58.427587 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:35:58.465892 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
-[0m15:35:58.500651 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m15:35:58.500901 [debug] [MainThread]: Partial parsing: updated file: stack_overflow://models/test.sql
-[0m15:35:58.561580 [error] [MainThread]: Encountered an error:
-Compilation Error in model test (models/test.sql)
-  source() takes exactly two arguments (1 given)
-[0m15:35:58.563437 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.28459284, "process_in_blocks": "0", "process_kernel_time": 0.146612, "process_mem_max_rss": "126205952", "process_out_blocks": "0", "process_user_time": 0.616523}
-[0m15:35:58.563615 [debug] [MainThread]: Command `dbt build` failed at 15:35:58.563582 after 0.28 seconds
-[0m15:35:58.563760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a31010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a32510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a33f90>]}
-[0m15:35:58.563905 [debug] [MainThread]: Flushing usage events
-[0m15:35:59.000765 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:36:21.469148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109526750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10959ae10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1095c9090>]}
-
-
-============================== 15:36:21.471606 | 4341af64-c31e-44f7-b72d-01c652c60847 ==============================
-[0m15:36:21.471606 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:36:21.471864 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'use_experimental_parser': 'False', 'warn_error': 'None', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'write_json': 'True', 'printer_width': '80', 'debug': 'False', 'target_path': 'None', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'introspect': 'True', 'partial_parse': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'use_colors': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'invocation_command': 'dbt build'}
-[0m15:36:21.562973 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4341af64-c31e-44f7-b72d-01c652c60847', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1095f51d0>]}
-[0m15:36:21.581079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4341af64-c31e-44f7-b72d-01c652c60847', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10511bad0>]}
-[0m15:36:21.582251 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:36:21.619117 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
-[0m15:36:21.651867 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m15:36:21.652089 [debug] [MainThread]: Partial parsing: updated file: stack_overflow://models/test.sql
-[0m15:36:21.709184 [error] [MainThread]: Encountered an error:
-Compilation Error
-  Model 'model.stack_overflow.test' (models/test.sql) depends on a source named 'stack_overflow_updated.raw.comments' which was not found
-[0m15:36:21.711050 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.27257234, "process_in_blocks": "0", "process_kernel_time": 0.146243, "process_mem_max_rss": "125009920", "process_out_blocks": "0", "process_user_time": 0.615141}
-[0m15:36:21.711223 [debug] [MainThread]: Command `dbt build` failed at 15:36:21.711189 after 0.27 seconds
-[0m15:36:21.711365 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1095c9350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b82510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1029a4e10>]}
-[0m15:36:21.711499 [debug] [MainThread]: Flushing usage events
-[0m15:36:22.009599 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:40:08.881757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ad3890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105dc8dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105dc9690>]}
-
-
-============================== 15:40:08.883842 | b2b06116-ec66-4184-b7e7-a29824df014b ==============================
-[0m15:40:08.883842 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:40:08.884067 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'use_colors': 'True', 'no_print': 'None', 'invocation_command': 'dbt build', 'log_cache_events': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'introspect': 'True', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'write_json': 'True', 'empty': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'warn_error': 'None', 'partial_parse': 'True', 'target_path': 'None', 'version_check': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False'}
-[0m15:40:08.961446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b2b06116-ec66-4184-b7e7-a29824df014b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e0c650>]}
-[0m15:40:08.979263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b2b06116-ec66-4184-b7e7-a29824df014b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1025af9d0>]}
-[0m15:40:08.980340 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:40:09.016612 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
-[0m15:40:09.049790 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m15:40:09.050011 [debug] [MainThread]: Partial parsing: updated file: stack_overflow://models/test.sql
-[0m15:40:09.107829 [error] [MainThread]: Encountered an error:
-Compilation Error
-  Model 'model.stack_overflow.test' (models/test.sql) depends on a source named 'stack_overflow_updated.raw.posts' which was not found
-[0m15:40:09.109851 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.25715053, "process_in_blocks": "0", "process_kernel_time": 0.134239, "process_mem_max_rss": "127467520", "process_out_blocks": "0", "process_user_time": 0.618836}
-[0m15:40:09.110031 [debug] [MainThread]: Command `dbt build` failed at 15:40:09.109999 after 0.26 seconds
-[0m15:40:09.110183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105dc9090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e0cd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100321fd0>]}
-[0m15:40:09.110312 [debug] [MainThread]: Flushing usage events
-[0m15:40:09.434993 [debug] [MainThread]: An error was encountered while trying to flush usage events
 [0m15:44:14.935929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e32cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e32990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e98d10>]}
 
 
@@ -607,82 +200,6 @@ Compilation Error
 [0m15:44:22.932994 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m15:44:22.933117 [info ] [MainThread]:   config_options: None
 [0m15:44:22.933200 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m15:44:22.933288 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
-[0m15:44:22.933375 [info ] [MainThread]:   external_root: .
-[0m15:44:22.933456 [info ] [MainThread]:   use_credential_provider: None
-[0m15:44:22.933541 [info ] [MainThread]:   attach: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27', 'type': None, 'alias': 'stack_overflow_updated', 'secret': None, 'read_only': False, 'options': None, 'is_ducklake': None}]
-[0m15:44:22.933627 [info ] [MainThread]:   filesystems: None
-[0m15:44:22.933707 [info ] [MainThread]:   remote: None
-[0m15:44:22.933786 [info ] [MainThread]:   plugins: [{'module': 'motherduck', 'alias': None, 'config': None}]
-[0m15:44:22.933867 [info ] [MainThread]:   disable_transactions: False
-[0m15:44:22.934088 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:44:22.965910 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
-[0m15:44:22.991680 [debug] [MainThread]: Using duckdb connection "debug"
-[0m15:44:22.991846 [debug] [MainThread]: On debug: select 1 as id
-[0m15:44:22.991945 [debug] [MainThread]: Opening a new connection, currently in state init
-[0m15:44:24.293602 [debug] [MainThread]: SQL status: OK in 1.301 seconds
-[0m15:44:24.294623 [debug] [MainThread]: On debug: Close
-[0m15:44:24.294895 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
-
-[0m15:44:24.295078 [info ] [MainThread]: [32mAll checks passed![0m
-[0m15:44:24.297836 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.4886197, "process_in_blocks": "0", "process_kernel_time": 0.414614, "process_mem_max_rss": "169000960", "process_out_blocks": "0", "process_user_time": 0.883657}
-[0m15:44:24.298191 [debug] [MainThread]: Command `dbt debug` succeeded at 15:44:24.298139 after 1.49 seconds
-[0m15:44:24.298352 [debug] [MainThread]: Connection 'debug' was properly closed.
-[0m15:44:24.298516 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109788590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10974bf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109778e10>]}
-[0m15:44:24.298709 [debug] [MainThread]: Flushing usage events
-[0m15:44:24.596394 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:44:26.930104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105549b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105578950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105579210>]}
-
-
-============================== 15:44:26.931706 | 003939ba-5c49-4ef6-9241-46dcd3ffc868 ==============================
-[0m15:44:26.931706 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:44:26.931925 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt build', 'log_cache_events': 'False', 'empty': 'False', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'target_path': 'None', 'write_json': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'no_print': 'None', 'log_format': 'default'}
-[0m15:44:27.002319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '003939ba-5c49-4ef6-9241-46dcd3ffc868', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105515bd0>]}
-[0m15:44:27.020776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '003939ba-5c49-4ef6-9241-46dcd3ffc868', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102cf9a90>]}
-[0m15:44:27.021468 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:44:27.054235 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
-[0m15:44:27.087629 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m15:44:27.087843 [debug] [MainThread]: Partial parsing: updated file: stack_overflow://models/test.sql
-[0m15:44:27.144309 [error] [MainThread]: Encountered an error:
-Compilation Error
-  Model 'model.stack_overflow.test' (models/test.sql) depends on a source named 'stack_overflow_updated.raw.posts' which was not found
-[0m15:44:27.145416 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.24126458, "process_in_blocks": "0", "process_kernel_time": 0.107035, "process_mem_max_rss": "126713856", "process_out_blocks": "0", "process_user_time": 0.616584}
-[0m15:44:27.145583 [debug] [MainThread]: Command `dbt build` failed at 15:44:27.145550 after 0.24 seconds
-[0m15:44:27.145742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105932290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105930490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100f15b10>]}
-[0m15:44:27.145871 [debug] [MainThread]: Flushing usage events
-[0m15:44:27.443413 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:45:32.907141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e8d250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ebca90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ebd350>]}
-
-
-============================== 15:45:32.909156 | 47e47d89-5f59-447d-b593-070977d7b7a2 ==============================
-[0m15:45:32.909156 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:45:32.909381 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'static_parser': 'True', 'log_format': 'default', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'warn_error': 'None', 'invocation_command': 'dbt build', 'target_path': 'None', 'introspect': 'True', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'version_check': 'True', 'printer_width': '80', 'debug': 'False', 'fail_fast': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'quiet': 'False', 'use_experimental_parser': 'False'}
-[0m15:45:33.002878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '47e47d89-5f59-447d-b593-070977d7b7a2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104f02990>]}
-[0m15:45:33.020941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '47e47d89-5f59-447d-b593-070977d7b7a2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10511e050>]}
-[0m15:45:33.022003 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:45:33.059258 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
-[0m15:45:33.097097 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m15:45:33.097335 [debug] [MainThread]: Partial parsing: updated file: stack_overflow://models/test.sql
-[0m15:45:33.155149 [error] [MainThread]: Encountered an error:
-Compilation Error
-  Model 'model.stack_overflow.test' (models/test.sql) depends on a source named 'stack_overflow_updated.raw.posts' which was not found
-[0m15:45:33.157009 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.278832, "process_in_blocks": "0", "process_kernel_time": 0.143938, "process_mem_max_rss": "125829120", "process_out_blocks": "0", "process_user_time": 0.613803}
-[0m15:45:33.157211 [debug] [MainThread]: Command `dbt build` failed at 15:45:33.157175 after 0.28 seconds
-[0m15:45:33.157381 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1005d9bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1005d9e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054fa0d0>]}
-[0m15:45:33.157518 [debug] [MainThread]: Flushing usage events
-[0m15:45:33.477603 [debug] [MainThread]: An error was encountered while trying to flush usage events
-[0m15:46:56.379936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10749a0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107433e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074d17d0>]}
-
-
-============================== 15:46:56.382048 | aa76de65-afb8-4a11-9bb5-0f90eee24676 ==============================
-[0m15:46:56.382048 [info ] [MainThread]: Running with dbt=1.10.11
-[0m15:46:56.382287 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'log_path': '/Users/tseegi/stack-overflow-dbt/logs', 'version_check': 'True', 'static_parser': 'True', 'no_print': 'None', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt docs generate', 'write_json': 'True', 'fail_fast': 'False', 'debug': 'False', 'partial_parse': 'True', 'log_format': 'default', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'introspect': 'True', 'use_colors': 'True', 'profiles_dir': '/Users/tseegi/stack-overflow-dbt', 'quiet': 'False'}
-[0m15:46:56.478423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aa76de65-afb8-4a11-9bb5-0f90eee24676', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107838410>]}
-[0m15:46:56.496192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aa76de65-afb8-4a11-9bb5-0f90eee24676', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10419bd90>]}
-[0m15:46:56.497237 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
-[0m15:46:56.535069 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
-[0m15:46:56.571667 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
-[0m15:46:56.571922 [debug] [MainThread]: Partial parsing: updated file: stack_overflow://models/test.sql
 [0m15:46:56.635698 [error] [MainThread]: Encountered an error:
 Compilation Error
   Model 'model.stack_overflow.test' (models/test.sql) depends on a source named 'stack_overflow_updated.raw.comments' which was not found
@@ -981,7 +498,6 @@ Compilation Error
 [0m15:59:51.921513 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m15:59:51.921634 [info ] [MainThread]:   config_options: None
 [0m15:59:51.921746 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m15:59:51.921841 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
 [0m15:59:51.921942 [info ] [MainThread]:   external_root: .
 [0m15:59:51.922043 [info ] [MainThread]:   use_credential_provider: None
 [0m15:59:51.922140 [info ] [MainThread]:   attach: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27', 'type': None, 'alias': 'stack_overflow_updated', 'secret': None, 'read_only': False, 'options': None, 'is_ducklake': None}]
@@ -1055,7 +571,6 @@ Compilation Error
 [0m16:01:21.149706 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m16:01:21.149822 [info ] [MainThread]:   config_options: None
 [0m16:01:21.149909 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m16:01:21.150003 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
 [0m16:01:21.150091 [info ] [MainThread]:   external_root: .
 [0m16:01:21.150177 [info ] [MainThread]:   use_credential_provider: None
 [0m16:01:21.150257 [info ] [MainThread]:   attach: None
@@ -1233,7 +748,6 @@ Compilation Error
 [0m16:11:59.722700 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m16:11:59.722803 [info ] [MainThread]:   config_options: None
 [0m16:11:59.722886 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m16:11:59.722972 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
 [0m16:11:59.723055 [info ] [MainThread]:   external_root: .
 [0m16:11:59.723136 [info ] [MainThread]:   use_credential_provider: None
 [0m16:11:59.723223 [info ] [MainThread]:   attach: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27', 'type': None, 'alias': 'stack_overflow_updated', 'secret': None, 'read_only': False, 'options': None, 'is_ducklake': None}]
@@ -1309,7 +823,6 @@ Compilation Error
 [0m16:12:44.364132 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m16:12:44.364240 [info ] [MainThread]:   config_options: None
 [0m16:12:44.364328 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m16:12:44.364423 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
 [0m16:12:44.364513 [info ] [MainThread]:   external_root: .
 [0m16:12:44.364604 [info ] [MainThread]:   use_credential_provider: None
 [0m16:12:44.364700 [info ] [MainThread]:   attach: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27', 'type': None, 'alias': 'stack_overflow_updated', 'secret': None, 'read_only': False, 'options': None, 'is_ducklake': None}]
@@ -2470,7 +1983,6 @@ select * from "stack_overflow_updated"."raw"."posts" limit 10
 [0m09:04:43.079899 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m09:04:43.080014 [info ] [MainThread]:   config_options: None
 [0m09:04:43.080104 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m09:04:43.080190 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
 [0m09:04:43.080290 [info ] [MainThread]:   external_root: .
 [0m09:04:43.080383 [info ] [MainThread]:   use_credential_provider: None
 [0m09:04:43.080476 [info ] [MainThread]:   attach: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27', 'type': None, 'alias': 'stack_overflow_updated', 'secret': None, 'read_only': False, 'options': None, 'is_ducklake': None}]
@@ -3173,7 +2685,6 @@ KeyboardInterrupt
 [0m14:23:53.969056 [info ] [MainThread]:   path: md:my_db?motherduck_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRzZWVnaUBtb3RoZXJkdWNrLmNvbSIsInNlc3Npb24iOiJ0c2VlZ2kubW90aGVyZHVjay5jb20iLCJwYXQiOiJTVURUUktBa2hGLVJPZzdjb1Y3UDZfZ1hnUGhobW1PTVRiaTFYbWNza1ZNIiwidXNlcklkIjoiMzI2MDgzOWEtNWQzYi00MDNhLWJmZDItNjdmYTViZGE4YzU3IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzU4NTg1Nzc4fQ.7ubsTDeX60nAahE5ddE0wbo796w5Q987te15nKowIWI
 [0m14:23:53.969165 [info ] [MainThread]:   config_options: None
 [0m14:23:53.969255 [info ] [MainThread]:   extensions: ['httpfs', 'parquet']
-[0m14:23:53.969343 [info ] [MainThread]:   settings: {'s3_region': 'my-aws-region', 's3_access_key_id': 'ASIA47CRZOQ2SGSNRYG7', 's3_secret_access_key': 'XtUw/D1nr0q9U9klw2vAqZ65MROs/YkAxjpR6cr5'}
 [0m14:23:53.969429 [info ] [MainThread]:   external_root: .
 [0m14:23:53.969513 [info ] [MainThread]:   use_credential_provider: None
 [0m14:23:53.969601 [info ] [MainThread]:   attach: [{'path': 'md:_share/stack_overflow_2025/f8c3d587-ec92-4d09-87f0-886bc4544c27', 'type': None, 'alias': 'stack_overflow_updated', 'secret': None, 'read_only': False, 'options': None, 'is_ducklake': None}]
